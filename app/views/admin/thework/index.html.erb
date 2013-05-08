@@ -1,0 +1,13 @@
+<h2>The Work</h2>
+  
+<p>
+  <%= @thework.body.html_safe %>
+</p>
+
+<section id='artists'>
+  <% @thework.artists.each do |artist| %>
+    <%= render 'artist', :artist => artist %>
+  <% end %>
+</section>
+
+<%= link_to 'edit', edit_admin_thework_path(@thework.id) %>

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+	   $('.editor').wysihtml5();
+	 });
+</script>
+
+<%= form_for [:admin, @artist], :html => { :multipart => true }  do |f| %>
+	<%= f.error_messages %>
+
+	<div class="item">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="item">
+		<%= f.label :info %>
+		<%= f.text_field :info %>
+	</div>
+	
+  <div class="item">
+    <%= image_tag @artist.image.url(:thumb) %>
+	  <%= f.label 'photo' %>
+	  <%= f.file_field :image %>
+	</div>
+
+	<div class="item">
+		<%= f.label :about %>
+		<%= f.text_area :about, :class => 'editor' %>
+	</div>
+	
+	<section class='item nested_attributes'>
+  	<%= f.fields_for :workitems do |builder| %>
+  	   <%= render 'workitem_fields', :f => builder %>
+  	<% end %>
+  	<%= link_to_add_fields("Add piece of work", f, :workitems) %>
+	</section>
+
+	<div class="item"><%= f.submit %></div>
+<% end %>

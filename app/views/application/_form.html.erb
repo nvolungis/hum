@@ -1,0 +1,31 @@
+<%= form_for(@submission, :url => submission_index_path) do |f| %>
+	<%= f.error_messages %>
+
+	<div class="item half pull-left">
+		<%= f.label 'First Name' %>
+		<%= f.text_field :f_name, :placeholder => "What's your first name?" %>
+	</div>
+
+	<div class="item half pull-right">
+		<%= f.label 'Last Name' %>
+		<%= f.text_field :l_name, :placeholder => "What's your last name?" %>
+	</div>
+	
+	<div class="item">
+		<%= f.label :location %>
+		<%= f.text_field :location, :placeholder => "Where are you from?" %>
+	</div>
+	
+	<div class="item">
+		<%= f.label :about %>
+		<%= f.text_area :about, :placeholder => 'TELL US A LITTLE BIT ABOUT WHAT BEING AN ARTIST IN BOSTON IS LIKE FOR YOU.' %>
+	</div>
+
+	<ul id='workitem-submissions' class='unstyled'></ul>
+	
+	<div class="item buttons">
+	  <%= link_to_add_fields("Add Work", f, :workitem_submissions, 'button', '#workitem-submissions') %> <span class='or'>OR</span> <%= f.submit 'Submit now', :class => 'button' %>
+  </div>
+<% end %>
+
+

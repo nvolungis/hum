@@ -1,0 +1,27 @@
+<h2>Submissions</h2>
+
+<ul id='submissions' class='unstyled'>
+  <% @submissions.each do |submission| %>
+    <li>
+      <div class='item'>
+        <strong>Name:</strong> <%= submission.f_name %> <%= submission.l_name %>
+      </div>
+      
+      <div class='item'>
+        <strong>Location:</strong> <%= submission.location %>
+      </div>
+      
+      <div class='item'>
+        <strong>About:</strong> <%= submission.about %>
+      </div>
+      
+      <% if submission.workitem_submissions.length > 0%>
+        <div class='workitem'>
+          <% submission.workitem_submissions.each do |workitem| %>
+            <%= render 'workitem', :workitem_submission => workitem %>
+          <% end %>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

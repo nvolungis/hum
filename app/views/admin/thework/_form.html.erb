@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+	   $('.editor').wysihtml5();
+	 });
+</script>
+
+<%= form_for [:admin, @thework] do |f| %>
+	<%= f.error_messages %>
+
+	<div class="item">
+		<%= f.label :body %>
+		<%= f.text_area :body, :class => 'editor' %>
+	</div>
+	
+	<% Artist.all.each do |artist| %>
+	  <div class="item radioitem">
+  		<%= check_box_tag "thework[artist_ids][]", artist.id, @thework.artists.include?(artist) %>
+  		<%= label_tag 'artist', artist.name %>
+		</div>
+	<% end %>
+
+	<div class="item"><%= f.submit %></div>
+<% end %>

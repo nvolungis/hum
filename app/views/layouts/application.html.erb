@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hum</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Arvo|Lato:400,100' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container-fluid'> 
+    <header>
+      <h1 id='site-name'><a href='/'>HUM</a></h1>
+      
+      <nav>
+        <a href='#the_idea'>The Idea</a>
+        <a href='#the_work'>The Work</a>
+        <a href='#donate'>Donate</a>
+        <a href='#submit'>Submit</a>
+      </nav>
+    </header>
+    
+  	<div class='notifications'>
+  		<% flash.each do |key, value| %>
+  			<div class='flash alert <%= key %>'>
+  				<%= value.html_safe %>
+  			</div>
+  		<% end %>
+  	</div>
+    
+    <%= yield %>
+    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<section id='the_idea' class='region'>
+  <p><%= @mission.body.html_safe %></p>
+  <blockquote><%= @mission.statement %></blockquote>
+</section>
+
+<section id='the_work' class='region'>
+  <p><%= @thework.body %></p>
+  
+  <section id='artists'>
+    <ul class='unstyled'>
+      <% @thework.artists.each do |artist| %>
+        <%= render 'artist', :artist => artist %>
+      <% end  %>
+    </ul>
+  </section>
+</section>
+
+<section id='donate' class='region'>
+  <p>Please donate!  Lorem ipsum dolor sit amet, cum repudiare pertinacia et, omnis solum honestatis an vis. Mea admodum molestie percipitur in, ex his lucilius sapientem elaboraret. </p>
+  
+  <a class='button' href='http://kickstarter.com' target='_blank'>Donate Now</a>
+</section>
+
+<section id='submit' class='region'>
+  <p>Something about submissions!  Lorem ipsum dolor sit amet, cum repudiare pertinacia et, omnis solum honestatis an vis. Mea admodum molestie percipitur in, ex his lucilius sapientem elaboraret. 
+</p>
+
+<%= render 'form', :submission => @submission %>
+</section>
+ 

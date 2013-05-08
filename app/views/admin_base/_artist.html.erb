@@ -1,0 +1,11 @@
+<article>
+  <%= image_tag artist.image.url(:thumb) %>
+  <h3><%= link_to 'Edit ' + artist.name, edit_admin_artist_path(artist) %></h3>
+  <span><%= artist.info %></span>
+  <p><%= artist.about %></p>
+  
+  
+  <% artist.workitems.each do |workitem| %>
+    <%= render 'workitem', :workitem => workitem, :artist => artist %>
+  <% end %>
+</article>

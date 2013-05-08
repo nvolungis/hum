@@ -1,0 +1,13 @@
+<h2>Artists</h2>
+
+<section id='artists'>
+  <% @artists.each do |artist| %>
+    <article>  
+      <%= image_tag artist.image.url(:thumb) %> 
+      <h3> <%= artist.name %> </h3>
+      <span> <%= artist.info %> </span>
+      <p> <%= artist.about.html_safe %> </p>
+      <%= link_to 'edit', edit_admin_artist_path(artist) %>
+    </article>
+  <% end %>
+</section>

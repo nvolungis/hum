@@ -1,0 +1,31 @@
+<li class='workitem-submission'>
+  <div class='submission-label'>Piece one</div>
+  <div></div>
+ 
+  <div class='item half pull-left'>
+    <%= f.label :title %>
+    <%= f.text_field :title, :placeholder => "What's the title?" %> 
+  </div>
+  
+  <div class='item half pull-right'>
+    <%= f.label :year %>
+    <%= f.text_field :year, :placeholder => 'What year did you make it?' %>
+  </div>
+  
+  <div class='item'>
+    <%= f.label :medium %>
+    <%= f.text_field :medium, :placeholder => "What's it made with?" %>
+  </div>
+  	
+  <div class='item'>
+    <%= f.label :comments %>
+    <%= f.text_area :comments, :placeholder => "Anything else you'de like to say about the piece?"  %>
+  </div>
+  
+  <div class='item'>
+    <%= f.label :link %>
+    <%= f.text_field :link, :placeholder => 'Is there a link to view the work?' %>
+  </div>
+
+    
+</li>

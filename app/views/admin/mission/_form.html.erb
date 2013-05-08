@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+	   $('.editor').wysihtml5();
+	 });
+</script>
+
+<%= form_for [:admin, @mission] do |f| %>
+	<%= f.error_messages %>
+
+	<div class="item">
+		<%= f.label :body %>
+		<%= f.text_area :body, :class => 'editor' %>
+	</div>
+
+	<div>
+		<%= f.label :statement %>
+		<%= f.text_field :statement %>
+	</div>
+
+	<div class="item"><%= f.submit %></div>
+<% end %>

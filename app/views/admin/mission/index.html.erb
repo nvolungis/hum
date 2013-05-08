@@ -1,0 +1,11 @@
+<h2>Mission</h2>
+
+<p>
+<%= @mission.body.html_safe %>
+<p>
+
+<blockquote>
+  <%= @mission.statement %>
+</blockquote>
+
+<%= link_to 'edit', edit_admin_mission_path(@mission.id) %>

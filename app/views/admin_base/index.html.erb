@@ -1,0 +1,33 @@
+<h1>Admin</h1>
+
+<hr />
+
+<section id='edit_mission'>
+  <h2><%= link_to 'Edit Mission', edit_admin_mission_path(@mission.id) %></h2>
+  
+  <p>
+    <%= @mission.body.html_safe %>
+  </p>
+  
+  <blockquote>
+    <%= @mission.statement %>
+  </blockquote>
+</section>
+ 
+<hr />
+
+<section id='edit_thework'>
+  <h2><%= link_to 'Edit The Work', edit_admin_thework_path(@thework.id) %></h2>
+  
+  <p>
+    <%= @thework.body.html_safe %>
+  </p>
+  
+  <section id='artists'>
+    <% @thework.artists.each do |artist| %>
+      <%= render 'artist', :artist => artist %>
+    <% end %>
+  </section>
+</section>
+
+<hr />

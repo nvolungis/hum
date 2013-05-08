@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+	   $('.editor').wysihtml5();
+	 });
+</script>
+
+<%= form_for [:admin, @workitem] do |f| %>
+	<%= f.error_messages %>
+
+	<div class="item">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	
+	<div class="item">
+		<%= f.label :info %>
+		<%= f.text_field :info %>
+	</div>
+	
+	 <div class="item">
+	  <%= f.label 'photo' %>
+	  <%= image_tag @workitem.image.url(:thumb) %><br />
+	  <%= f.file_field :image %>
+	</div>
+	
+	<div class="item">
+		<%= f.label :about %>
+		<%= f.text_area :about, :class => 'editor' %>
+	</div>
+
+	<div class="item"><%= f.submit %></div>
+<% end %>

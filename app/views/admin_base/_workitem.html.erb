@@ -1,0 +1,4 @@
+<h4> <%= link_to 'Edit ' + artist.name + "'s work '" + workitem.title + "'", edit_admin_workitem_path(workitem) %> </h4>
+<%= image_tag workitem.image.url(:thumb) %>
+<span class='info'> <%= workitem.info %> </span>
+<p> <%= workitem.about %> </p>
