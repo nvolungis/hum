@@ -1,6 +1,4 @@
-<li class='artist'> 
-
-  <%= image_tag artist.image.url(:thumb) %> 
+<li class='artist' id='<%= format_id(artist.name) %>'> 
   <h3> <%= artist.name %> </h3>
   <span> <%= artist.info %> </span>
   <p> <%= artist.about.html_safe %> </p>
@@ -12,4 +10,4 @@
       <% end %>
     </ul>
   </section>
-</li> 
+</li>

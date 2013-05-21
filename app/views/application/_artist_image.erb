@@ -1,0 +1,6 @@
+<li class='artist-image' data-name=<%= format_id(artist.name)%> > 
+  <div class='mask-wrapper'>
+    <%= image_tag image_path('mask.png'), :class => "mask-image" %>
+    <%= image_tag artist.image.url(:thumb), :class => "photo" %> 
+  </div>
+</li>

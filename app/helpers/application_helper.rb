@@ -9,4 +9,8 @@ module ApplicationHelper
     
     link_to(name, '#', class: "add_fields " + className, data: {id: id, container: container, fields:fields.gsub('\n', '')}) 
   end
+  
+  def format_id(str)
+    str.downcase.gsub(" ", "_")
+  end
 end
