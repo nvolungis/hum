@@ -4,10 +4,18 @@
   <p> <%= artist.about.html_safe %> </p>
   
   <section class='workitems'>
-    <ul class='unstyled'>
-      <% artist.workitems.each do |workitem| %>
-        <%= render 'workitem', :workitem => workitem %>
-      <% end %>
+	  <ul class='unstyled workitems'>
+	    <% artist.workitems.each do |workitem| %>
+	      <%= render 'workitem', :workitem => workitem %>
+	    <% end %>
+	  </ul>
+  
+		<ul class='unstyled workitem-images'>
+			<% count = 0 %>
+			<% artist.workitems.each do |workitem| %>
+		  <%= render 'workitem_image', :workitem => workitem, :count => count %>
+		  <% count += 1 %>
+			<% end %>
     </ul>
   </section>
 </li>

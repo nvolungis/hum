@@ -1,6 +1,5 @@
-<li class='workitem'>
-  <h4> <%= workitem.title %> </h4>
+<li class='workitem' id="<%= format_id(workitem.title)%>">
+  <h3> <%= workitem.title %> </h3>
   <span class='info'> <%= workitem.info %> </span>
-  <p><%= workitem.about %></p>
-  <%= image_tag workitem.image.url() %>
+<!--   <p><%= workitem.about %></p> -->
 </li>

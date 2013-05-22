@@ -1,0 +1,4 @@
+<li class='workitem-image image-<%= count %>' data-id="<%= format_id(workitem.title)%>">
+  <%= image_tag workitem.image.url(:accordion) %>
+  <a href='<%= workitem.image.url() %>' target='_blank'>Larger +</a>
+</li>
