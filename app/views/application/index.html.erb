@@ -1,21 +1,18 @@
 <section id='the_idea' class='region'>
-  <div class='narrow'>
-    <p><%= @mission.body.html_safe %></p>
-  </div>
-  <blockquote><%= @mission.statement %></blockquote>
+	<div class='container-fluid'>
+	  <h2>The Idea</h2>
+		<p><%= @mission.body.html_safe %></p>
+	  <blockquote><%= @mission.statement %></blockquote>
+	</div>
 </section>
-
+<hr />
 <section id='the_work' class='region'>
-  <h2>The Work</h2>
-  <p><%= @thework.body %></p>
+  <div class='container-fluid'>
+  	<h2>The Work</h2>
+  	<p><%= @thework.body %></p>
+  </div>
   
   <section id='artists'>
-    <ul class='unstyled artist-images clearfix'>
-      <% @thework.artists.each do |artist| %>
-        <%= render 'artist_image', :artist => artist %>
-      <% end  %>
-    </ul>
-  
     <ul class='unstyled artists'>
       <% @thework.artists.each do |artist| %>
         <%= render 'artist', :artist => artist %>
@@ -23,7 +20,7 @@
     </ul>
   </section>
 </section>
-
+<hr />
 <section id='donate' class='region'>
   <h2>Donate</h2>
   <p>Please donate!  Lorem ipsum dolor sit amet, cum repudiare pertinacia et, omnis solum honestatis an vis. Mea admodum molestie percipitur in, ex his lucilius sapientem elaboraret. </p>

@@ -1,4 +1,4 @@
-class Admin::SubmissionsController < ApplicationController
+class Admin::SubmissionsController < Admin::AdminBaseController
 
   def index
     @submissions = Submission.all

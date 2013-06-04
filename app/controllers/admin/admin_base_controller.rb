@@ -1,4 +1,4 @@
-class AdminBaseController < ApplicationController
+class Admin::AdminBaseController < ApplicationController
   def index
     @mission = Mission.first
     @thework = Thework.first

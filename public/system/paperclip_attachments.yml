@@ -2,3 +2,7 @@
 :Artist:
   :image:
   - :thumb
+:Workitem:
+  :image:
+  - :accordion
+  - :thumb
