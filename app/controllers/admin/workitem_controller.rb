@@ -1,4 +1,5 @@
-class Admin::WorkitemController < AdminBaseController
+class Admin::WorkitemController < Admin::AdminBaseController
+
   def index
     @workitem = Workitem.first
   end  

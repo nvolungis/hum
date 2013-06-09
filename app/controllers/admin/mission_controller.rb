@@ -1,4 +1,4 @@
-class Admin::MissionController < AdminBaseController
+class Admin::MissionController < Admin::AdminBaseController
   def index
     @mission = Mission.first
   end

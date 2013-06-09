@@ -1,21 +1,32 @@
 <li class='artist' id='<%= format_id(artist.name) %>'> 
-  <h3> <%= artist.name %> </h3>
-  <span> <%= artist.info %> </span>
-  <p> <%= artist.about.html_safe %> </p>
-  
-  <section class='workitems'>
-	  <ul class='unstyled workitems'>
-	    <% artist.workitems.each do |workitem| %>
-	      <%= render 'workitem', :workitem => workitem %>
-	    <% end %>
-	  </ul>
-  
-		<ul class='unstyled workitem-images'>
-			<% count = 0 %>
-			<% artist.workitems.each do |workitem| %>
-		  <%= render 'workitem_image', :workitem => workitem, :count => count %>
-		  <% count += 1 %>
-			<% end %>
-    </ul>
+  <div class='details'>
+  	<div class='container-fluid'>
+		  <%= image_tag artist.image.url(:thumb), :class => "photo" %> 
+		  <h3> <%= artist.name %> </h3>
+		  <span> <%= artist.info %> </span>
+		  <p> <%= artist.about.html_safe %> </p>
+		</div>
+	</div>
+
+  <section class='workitems'>  
+		<div class='container-fluid'>
+			<ul class='unstyled workitem-images'>
+				<% count = 0 %>
+				<% artist.workitems.each do |workitem| %>
+			  <%= render 'workitem_image', :workitem => workitem, :count => count %>
+			  <% count += 1 %>
+				<% end %>
+	    </ul>
+		</div>
+    
+    <div class='info'>
+    	<div class='container-fluid'>
+		    <ul class='unstyled workitems'>
+			    <% artist.workitems.each do |workitem| %>
+			      <%= render 'workitem', :workitem => workitem %>
+			    <% end %>
+			  </ul>
+			</div>
+		</div>
   </section>
 </li>

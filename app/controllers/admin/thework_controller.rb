@@ -1,4 +1,4 @@
-class Admin::TheworkController < AdminBaseController
+class Admin::TheworkController < Admin::AdminBaseController
   def index
     @thework = Thework.first
   end  

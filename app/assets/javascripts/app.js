@@ -1,4 +1,4 @@
 $(document).ready(function(){
-  $('#artists').artists();
+  $('body').viewer();
   $('#artists .artist').workitems();
 });

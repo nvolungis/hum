@@ -1,4 +1,4 @@
-class Admin::ArtistController < AdminBaseController
+class Admin::ArtistController < Admin::AdminBaseController
   def index
     @artists = Artist.all
   end
