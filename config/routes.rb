@@ -2,7 +2,7 @@ Hum::Application.routes.draw do
   root :to => 'application#index'
   resources :submission
   
-  namespace :admin do
+  scope :path => "admin" do
     root :to => 'admin_base#index'
     
     resources :submissions, :only => [:index]
