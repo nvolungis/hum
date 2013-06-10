@@ -1,3 +1,4 @@
+
 ;(function ( $, window, document, undefined ) {
   var plugin_name = 'touchslide',
       defaults = {
@@ -95,7 +96,7 @@
 	    this.$el.on('dragend', function(e){
 		    e.preventDefault();
 		    that.$panel.css({
-			    'transition':that.options.duration + 'ms',
+			    'transition':that.options.duration + 'ms'
 		    });
 				
 				var above_threshold = Math.abs(moved) > that.options.threshold;

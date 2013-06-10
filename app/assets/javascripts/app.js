@@ -1,4 +1,6 @@
-$(document).ready(function(){
-  $('body').viewer();
-  $('#artists .artist').workitems();
-});
+(function($){
+	$(document).ready(function(){
+	  $('.workitem-image').viewer();
+	  $('#artists .artist').workitems();
+	});
+}(jQuery));
