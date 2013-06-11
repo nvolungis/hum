@@ -79,11 +79,6 @@
 		addObj:function($obj, id, cache){
 			try{
 				
-				if( !($obj.height() && $obj.width()) ){
-					$obj.height($obj[0].height);
-					$obj.width($obj[0].width);
-				}
-
 				if( !($obj.height() && $obj.width()) ) throw({
 					message: 'Object must have a height and width',
 					status: 'notReady',
