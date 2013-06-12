@@ -11,7 +11,9 @@
   									"</div>" +
   								"</div>");
   								
-      defaults = {};
+      defaults = {
+	      padding: 30
+      };
       
       
   function Viewer( el, options ){
@@ -19,8 +21,6 @@
     this.$el = $(el);
     this.$target = this.$el.find('a');
     this.options = $.extend({}, defaults, options);
-    this.comparer = new AspectRatioComparer();
-		this.listener = new WindowListener({context:this, frequency: 1});
     this.init();
   }    
   
@@ -45,7 +45,7 @@
 	    	that.show();
 	    });
 	    
-	    this.listener.addHandler(this.sizePhoto);
+	    $(window).bind('resize', $.proxy(this.sizePhoto, this));
     },
     
     setCloseHandler:function(){
@@ -58,25 +58,27 @@
     },
     
     sizePhoto: function(){
-	    if(this.comparer.theWiderOne() === 'img'){
-		    this.$img.css({width:'auto', height:$window.height()});
+			if(!this.loaded) return;
+			
+			var wider = this.comparer.compare(),
+					width = $window.width() - this.options.padding,
+					height = $window.height() - this.options.padding;
+
+	    if(wider.obj === 'image'){
+		    this.$img.css({width:width, height:'auto'});
 	    }else{
-		    this.$img.css({heignt:'auto', width:$window.width()});
+	    	this.$img.css({width:'auto', height:height});
 	    }
     }, 
     
     show: function(){
     	var that = this;
     	this.load(this.$img, function(){
-		    if(!that.setup){
-	    		that.comparer.addObj(that.$img, 'img', true);
-					that.comparer.addObj($window, 'window');
-					that.setup = true;
-				}
-				
-	    	that.listener.start();
-	    	that.setCloseHandler();
 		    $('body').append(that.$viewer);
+		    that.comparer = new Comparer($(window), that.$img);
+	    	that.setCloseHandler()
+	    	that.loaded = true;
+	    	that.sizePhoto();
     	});
     },
     
@@ -92,7 +94,6 @@
     },
     
     hide: function(){
-    	this.listener.stop();
 	    $('#viewer').remove();
     }
   });    

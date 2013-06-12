@@ -6,7 +6,7 @@ $min-1000: 'screen and (min-width: 1000px)';
 textarea:focus,
 input[type="text"]:focus      { outline: 0; outline: thin dotted \9; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
-body                          { font-family: 'Lato', sans-serif; color:#5f5d5d; font-weight: 100; font-size:19px; }
+body                          { font-family: 'Lato', sans-serif; color:#5f5d5d; font-weight: 100; font-size:19px; line-height: 28px;}
 
 h1,h2,h3,h4,h5,h6             { font-family: 'BenchNine', sans-serif; font-weight: 100; text-transform: uppercase; }
 
@@ -44,8 +44,8 @@ header                        { text-align:center; position:relative;
   }
 }
 
-.region                       { padding:40px 0px; 
-  @media #{$min-600}          { padding:20px 0; }
+.region                       { padding:80px 0px 80px; 
+  @media #{$min-600}          {}
   &:last-child                { border-bottom:none; margin-bottom:200px; }
 }
 
@@ -53,10 +53,20 @@ header                        { text-align:center; position:relative;
   @media #{$min-800}          { padding: 0 80px; } 
 }
 
+.center 											{ text-align: center; }
 
+.up														{ text-transform: uppercase; font-weight: 400; }
 
-#the_idea                     { 
-  blockquote                  { margin:45px 0; padding:0; font-size:30px; font-weight: 100; font-style: italic; color:#585858; 
+.left													{
+	@media #{$min-600}					{ float:left; }
+}
+
+.right												{
+	@media #{$min-600}					{ float:right; }
+}
+
+#the_idea                     { padding-top: 0;
+  blockquote                  { margin:45px 0 0; padding:0; font-size:30px; font-weight: 100; font-style: italic; color:#585858; 
   															font-family: 'Josefin Slab', serif; line-height:1.2em; border-left:none; text-align: center; text-transform:uppercase;}
 }
 
@@ -112,7 +122,7 @@ header                        { text-align:center; position:relative;
 			}
 			
 			&.narrow								{ height: auto;
-				.workitem-image				{ position: static; border: none; transition: none; width: auto; 
+				.workitem-image				{ position: relative; border: none; transition: none; width: auto; 
 		  		&:hover							{ border:none; }
 					img									{ margin-left: 0; transition:none; max-width: 100%;}
 				}
@@ -155,15 +165,14 @@ header                        { text-align:center; position:relative;
 
 #the_work                     { 
   .artist                     { margin-bottom:100px; 
+  	&:last-child							{ margin-bottom: 0; }
     h3												{ margin-bottom: 0; line-height: 1em;}
 		span											{ color: #999; text-transform:uppercase; font-style: italic; font-size: 15px; font-family: 'Josefin Slab', serif; display:block; margin-bottom: 1.5em;}
   }  
 }
 
 #donate                       {
-	.center											{ text-align: center;
-		.button                   { margin-top: 20px; }
-	}
+	.button                  		{ margin-top: 20px; }
 }
 
 #submission                   {  }
@@ -211,9 +220,28 @@ header                        { text-align:center; position:relative;
 }
 
 #viewer												{ position:fixed; top:0;right:0;bottom:0;left:0; text-align:center; background: rgba(255,255,255,.9); z-index: 1000;
-	#close											{ cursor:pointer; display: block; width: 20px; height: 20px; text-align: center; position:absolute; top:10px; right:10px; }
+	#close											{ cursor:pointer; display: block; width: 20px; height: 20px; text-align: center; position:absolute; top:10px; right:10px; z-index:20; }
 }
 
 .table-wrapper								{ display: table; position:relative; height:100%; width: 100%; max-height:100%; max-width:100%;
 	.table-cell									{ display: table-cell; height:100%; width: 100%; vertical-align:middle; text-align:center;}
+}
+
+#about 												{
+	#about-image								{ height: 300px; background: url(image_path('about.jpg')) center center no-repeat; background-size: cover; 
+		@media #{$min-600}				{ height: 600px; }
+	}
+	.us													{ margin-top: 30px; }
+	article											{ display: block; margin-bottom: 20px;
+		@media #{$min-600}				{ width: 48%; }
+
+	}
+}
+
+footer												{ padding: 10px 0; font-size: 15px; 
+	span												{ display:block; padding: 5px 0; 
+		@media #{$min-600}				{ padding: 0; }
+	}
+	
+	a														{ color: inherit; }
 }
