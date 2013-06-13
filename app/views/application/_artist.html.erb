@@ -1,4 +1,4 @@
-<li class='artist' id='<%= format_id(artist.name) %>'> 
+<li class='artist artist-<%= index %>' id='<%= format_id(artist.name) %>'> 
   <div class='details'>
   	<div class='container-fluid'>
 		  <%= image_tag artist.image.url(:thumb), :class => "photo" %> 

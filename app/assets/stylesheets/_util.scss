@@ -1,0 +1,7 @@
+@mixin lin-gradient($color1, $color2, $stop1:43%, $stop2:66%, $dir:left){
+	background-image: linear-gradient($dir , $color1 $stop1, $color2 $stop2);
+	background-image: -o-linear-gradient($dir , $color1 $stop1, $color2 $stop2);
+	background-image: -moz-linear-gradient($dir , $color1 $stop1, $color2 $stop2);
+	background-image: -webkit-linear-gradient($dir , $color1 $stop1, $color2 $stop2);
+	background-image: -ms-linear-gradient($dir , $color1 $stop1, $color2 $stop2);
+}

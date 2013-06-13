@@ -3,6 +3,8 @@ $min-700: 'screen and (min-width: 700px)';
 $min-800: 'screen and (min-width: 800px)';
 $min-1000: 'screen and (min-width: 1000px)';
 
+@import 'util';
+
 textarea:focus,
 input[type="text"]:focus      { outline: 0; outline: thin dotted \9; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
@@ -86,14 +88,19 @@ header                        { text-align:center; position:relative;
   
   .info												{ margin-top: 30px; }
   
-  #shane_butler								{
+  .artist-0										{
   	.details,									
-  	.info											{ background:#f4e8e8; }
+  	.info											{ background:#f4e8e8; @include lin-gradient(#F8F1F1, #FCF9F9, 32%, 66%);	}
   }
   
-  #jeff_downer 								{
+  .artist-1		 								{
   	.details,									
-  	.info											{ background:#f3f1e1; }
+  	.info											{ background:#f3f1e1; @include lin-gradient(#F3F1E1, #FAF9F2, 32%, 66%);	}  
+  }
+  
+  .artist-2		 								{
+  	.details,									
+  	.info											{ background:#f4e8ec; @include lin-gradient(#f4e8ec, #fdf6f9, 32%, 66%);	}  
   }
   
   .artist-images							{ margin-bottom: 3em; }

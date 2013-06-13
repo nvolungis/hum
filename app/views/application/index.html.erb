@@ -14,8 +14,10 @@
   
   <section id='artists'>
     <ul class='unstyled artists'>
+    	<% count = 0  %>
       <% @thework.artists.each do |artist| %>
-        <%= render 'artist', :artist => artist %>
+        <%= render 'artist', :artist => artist, :index => count %>
+        <% count += 1 %>
       <% end  %>
     </ul>
   </section>
