@@ -100,17 +100,17 @@ header                        { text-align:center; position:relative;
   
   .artist-0										{
   	.details,									
-  	.info											{ background:#f4e8e8; @include lin-gradient(#F8F1F1, #FCF9F9, 32%, 66%);	}
+  	.info											{ background:#f3f0e0; @include lin-gradient(#f3f0e0, #fff, 32%, 66%); }
   }
   
   .artist-1		 								{
   	.details,									
-  	.info											{ background:#f3f1e1; @include lin-gradient(#F3F1E1, #FAF9F2, 32%, 66%);	}  
+  	.info											{ background:#fbf2f2; @include lin-gradient(#f8e8e8, #fff, 32%, 66%);	}  
   }
   
   .artist-2		 								{
   	.details,									
-  	.info											{ background:#f4e8ec; @include lin-gradient(#f4e8ec, #fdf6f9, 32%, 66%);	}  
+  	.info											{ background:#f4e8ec; @include lin-gradient(#e9e8f3, #fff, 32%, 66%);	}  
   }
   
   .artist-images							{ margin-bottom: 3em; }
