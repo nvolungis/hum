@@ -3,7 +3,8 @@
       defaults = {
         class_name: 'fixed',
         spacer_element: 'null',
-        regulation_interval: 3
+        min_width: 600,
+        regulation_interval: 100
       };
 
   // The actual plugin constructor
@@ -13,6 +14,7 @@
         spacer_height = !options.spacer_element ? 0 : $(options.spacer_element).height(),
         
         interval, 
+        mobile = true,
         scrolled = false, 
         resized = false,
         
@@ -23,24 +25,25 @@
     
     var initialize = function(){
       registerHandlers();
+      startEnquire();
       startListeners();
       $window.scroll();
     };
 
 
     var registerHandlers = (function(){
-      var fixed = false;
+      var 
+      below_spacer = false,
       
-      
-      var onScroll = function(){
+      onScroll = function(){
         scrolled = true;
-      };
+      },
       
-      var onResize = function(){
+      onResize = function(){
         resized = true; 
-      };
-      
-      var setPadding = (function(){
+      },
+
+      setPadding = (function(){
         var $parent = $el.parent();
       
         return function(height){
@@ -57,6 +60,8 @@
       
       
         $el.on('bar:fix', function(){
+          if(mobile) return;
+          
           var padding = $el.height();
           
           $el.addClass('fixed');  
@@ -72,28 +77,53 @@
           var scrolltop = $body.scrollTop();
       
           if(scrolltop >= spacer_height){
-            if(fixed) return;
-            
+            if(below_spacer) return;
+  
             $el.trigger('bar:fix');
-            fixed = true;       
+            below_spacer = true;       
             return;
           }  
          
-          if(fixed){
+          if(below_spacer){
             $el.trigger('bar:unfix');
-            fixed = false;
+            below_spacer = false;
           }
         });
         
         $el.on('regulated:resize', function(){
-          if(!fixed) return;
+          if(!below_spacer) return;
           
           var padding = $el.height();
           setPadding(padding);
         });
+        
+        $el.on('enquire:fired', function(){
+          if(mobile){
+            $el.trigger('bar:unfix');
+            return;
+          }
+          
+          if(!mobile && below_spacer){
+            $el.trigger('bar:fix');
+          }
+        });
       }
     }());
       
+      
+    var startEnquire = function(){
+      enquire.register('screen and (min-width:600px)', {
+        match: function(){
+          mobile = false;
+          $el.trigger('enquire:fired');
+        },
+        
+        unmatch: function(){
+          mobile = true;
+          $el.trigger('enquire:fired');
+        }
+      });
+    };
       
     var startListeners = function(){
       interval = setInterval(function(){
