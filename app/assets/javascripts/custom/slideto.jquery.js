@@ -48,8 +48,8 @@
   $.fn[plugin_name] = function ( options ) {
     return this.each(function () {
       if (!$.data(this, 'plugin_' + plugin_name)) {
-          $.data(this, 'plugin_' + plugin_name, 
-          new Slideto( this, options ));
+        $.data(this, 'plugin_' + plugin_name, 
+        new Slideto( this, options ));
       }
     });
 }
