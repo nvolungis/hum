@@ -5,5 +5,6 @@
 	  $('#header').fixbar({
   	  spacer_element: '#strip'
 	  });
+	  $('body').slideto();
 	});
 }(jQuery));
