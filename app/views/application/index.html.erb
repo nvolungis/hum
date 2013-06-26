@@ -5,7 +5,37 @@
 	  <blockquote><%= @mission.statement %></blockquote>
 	</div>
 </section>
-<hr />
+
+<section id='mailer'>
+  <div class='container-fluid'>
+    <div class='left'>
+      Sign up for our email list to receive email updates about upcoming issues, submission deadlines and events! 
+    </div>
+    
+    <div class='right'>
+    
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="http://humboston.us7.list-manage.com/subscribe/post?u=4e2603c5271ff0024c360fb15&amp;id=9193e656de" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        	
+          <div class="mc-field-group">
+          <!-- 	<label for="mce-EMAIL">Email Address </label> -->
+          	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder='Email Address'>
+          </div>
+        	<div id="mce-responses">
+        		<div class="response" id="mce-error-response" style="display:none"></div>
+        		<div class="response" id="mce-success-response" style="display:none"></div>
+        	</div>	
+
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
+  
+    </div>
+  </div>
+</section>
+
 <section id='the_work' class='region'>
   <div class='container-fluid'>
   	<h2>The Work</h2>
@@ -22,7 +52,7 @@
     </ul>
   </section>
 </section>
-<hr />
+
 <section id='donate' class='region'>
   <div class='container-fluid'>
   	
@@ -33,7 +63,7 @@
 		<br />
 	</div>
 </section>
-<hr />
+
 <section id='submit' class='region'>
 	<div class='container-fluid'>
 		<h2>Submit</h2>
@@ -42,7 +72,7 @@
 	<%= render 'form', :submission => @submission %>
 	</div>
 </section>
-<hr />
+
 <section id='about'>
 	<div class='container-fluid'>
 		<h2>About Us</h2>
