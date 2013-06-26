@@ -21,6 +21,17 @@ a:focus                       { outline: none; }
 
 .hidden                       { display:none; }
 
+
+input[type="email"],
+input[type="text"],  
+textarea            				 	{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:100%; height:auto; padding:10px; 
+                                font-size:20px; text-transform:uppercase; line-height:1.2em; color:#3b3b3b; border:3px solid #cac8c8; font-style: italic; 
+                                font-family: 'Lato', sans-serif; 
+    
+    &:focus										{ border-color: #cbac37; }
+}
+
+
 a.button,
 input[type='submit'].button   { background:#414040; color:#dfdfdf; text-transform:uppercase; display:inline-block; font-weight:400; font-family: 'Josefin Slab', serif; 
                                 padding:20px 30px 15px; font-size:20px; font-style:normal; line-height:1.2em; vertical-align: bottom; border:none; border-radius: 0;
@@ -90,10 +101,14 @@ header                        { text-align:center; position:relative;
   .right                      { width: 100%; 
     @media #{$min-600}        { width: 48%; }
   }
-	#mc_embed_signup            { 
-	  form                      { padding: 0; margin: 0;}
-	  input                     { margin:0; }
+	#mc_embed_signup            { margin-top: 30px; 
+		@media #{$min-600}				{ margin-top: 0; }
+	  form                      { padding: 0 60px 0 0; margin: 0; position: relative;}
+	  input[type=email]         { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: auto;}
+	  input[type=submit]        { position: absolute; top: 0; right: 0; padding: 11px 14px; font-size:24px; }
 	  .mc-field-group           { padding:0; }
+	  
+	  #mce-success-response			{ font-size: 17px; font-weight: bold; }
 	}
 }
 
@@ -101,7 +116,7 @@ header                        { text-align:center; position:relative;
 #artists                      {   
   .details										{ margin: 140px 0 40px; min-height: 200px; position: relative; padding-top: 60px;
   	 @media #{$min-600}				{ margin: 40px 0; padding-top: 0;}
-  	.photo                    { border-radius: 50%; width: 110px;  position:absolute; top: -60px; margin-left: -55px; left: 50%;
+  	.photo                    { border-radius: 50%; width: 140px;  position:absolute; top: -70px; margin-left: -70px; left: 50%;
 	  	@media #{$min-600}			{ float:left; width: auto; position:relative; top: -20px; margin-right: 15px; margin-left: 0; left: 0;}
   	}
 	  .container-fluid					{ clear:none; 
@@ -203,26 +218,45 @@ header                        { text-align:center; position:relative;
   }  
 }
 
+
 #donate                       { background: #e5e5e5;
-	.button                  		{ margin-top: 20px; }
+	.button                  		{ margin: 50px auto 30px; display: block; width: 223px; font-size: 30px;
+		@media #{$min-600}				{ font-size: 40px; width: 300px; }
+	}
+	
+	.stats 											{ text-align: center; text-transform: uppercase; font-style: italic; font-size: 16px;
+		li												{ width: 180px; height: 200px; border-radius: 50%; background: #fff; display: inline-block; padding: 0 10px; margin: 10px 20px;
+			&.first                 { 
+				span									{ color: #ebd15e; }
+			}
+			
+			&.second								{
+				span									{ color: #d7c884; }
+			}
+			
+			&.third 								{ 
+				span									{ color: #dfd9bf; }
+			}
+			
+			
+			span										{ font-family: 'BenchNine', sans-serif; font-weight: 100; text-transform: uppercase; font-size: 86px; font-style: normal; }
+			hr											{ border-color: #EEEEEE; margin: 10px 0; }
+		
+			@media #{$min-600}			{   }
+			@media #{$min-700}			{  }
+		
+		}
+	}
 }
 
 #submission                   {  }
 
 .new_submission               { max-width: 720px; margin:40px auto 0; 
-  label                       { display:none; }
-  input, textarea             { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width:100%; height:auto; padding:10px; 
-                                font-size:20px; text-transform:uppercase; line-height:1.2em; color:#3b3b3b; border:3px solid #cac8c8; font-style: italic; 
-                                font-family: 'Lato', sans-serif; 
-    
-    &:focus										{ border-color: #cbac37; }
-  }
+  label                       { display:none; }  
   
   textarea										{ height:200px; }                               
                                
-                                
-                                
-                                
+               
   .item                       { width:100%; 
     &.half                    { width:100%; 
        @media #{$min-600}     { width:49%; }

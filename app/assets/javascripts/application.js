@@ -16,4 +16,5 @@
 //= require twitter/bootstrap/button
 //= require bootstrap-wysihtml5
 //= require_tree ./lib
+//= require_tree ./custom
 //= require_tree .

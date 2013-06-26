@@ -89,6 +89,7 @@ function mce_success_cb(resp){
     if (resp.result=="success"){
         $('#mce-'+resp.result+'-response').show();
         $('#mce-'+resp.result+'-response').html(resp.msg);
+        $('#mc-inputs').hide();
         $('#mc-embedded-subscribe-form').each(function(){
             this.reset();
     	});
