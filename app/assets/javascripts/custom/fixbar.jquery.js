@@ -4,7 +4,7 @@
         class_name: 'fixed',
         spacer_element: 'null',
         min_width: 600,
-        regulation_interval: 100
+        regulation_interval: 10
       };
 
   // The actual plugin constructor
@@ -19,7 +19,8 @@
         resized = false,
         
         $el = $(el),
-        $body = $('html, body'),   
+        $body = $('body'),
+        $html = $('html'),
         $window = $(window);
     
     
@@ -74,8 +75,8 @@
         });
         
         $el.on('regulated:scroll', function(){
-          var scrolltop = $body.scrollTop();
-      
+          var scrolltop = $body.scrollTop() || $html.scrollTop();
+          
           if(scrolltop >= spacer_height){
             if(below_spacer) return;
   
@@ -92,9 +93,8 @@
         
         $el.on('regulated:resize', function(){
           if(!below_spacer) return;
-          
-          var padding = $el.height();
-          setPadding(padding);
+
+          setPadding($el.height());
         });
         
         $el.on('enquire:fired', function(){
