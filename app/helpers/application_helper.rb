@@ -13,4 +13,11 @@ module ApplicationHelper
   def format_id(str)
     str.downcase.gsub(" ", "_")
   end
+  
+  
+  def get_header_image
+  	number = rand(5) + 1
+  	
+  	"/assets/header-texture-#{number}.jpg"
+  end
 end

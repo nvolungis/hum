@@ -11,17 +11,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div id='strip'></div>
-    <header id='header'>
-      <div class='container-fluid'> 
-        <h1 id='site-name'><a href='/'>HUM</a></h1>
-      
-        <nav>
-          <a href='#the_idea'>The Idea</a>
-          <a href='#the_work'>The Work</a>
-          <a href='#donate'>Donate</a>
-          <a href='#submit'>Submit</a>
-        </nav>
+    <div id='strip' style="background-image:url(<%= get_header_image %>)" >
+	    
+    </div>
+
+    <header>
+      <div id='header'>
+        <div class='container-fluid'> 
+          <h1 id='site-name'><a href='/'>HUM</a></h1>
+        
+        
+          <nav>
+            <a href='#the_idea' class='slideto'>The Idea</a>
+            <a href='#the_work' class='slideto'>The Work</a>
+            <a href='#donate' class='slideto'>Donate</a>
+            <a href='#submit' class='slideto'>Submit</a>
+          </nav>
+        </div>
 
       </div>
     </header>
