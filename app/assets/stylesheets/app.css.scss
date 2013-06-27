@@ -43,7 +43,23 @@ input[type='submit'].button   { background:#414040; color:#dfdfdf; text-transfor
   &.inactive                  { background:#9c9b9b; cursor:default; text-decoration: none; }
 }
 
-#strip                        { background:url(image_path('header-texture.jpg')) center bottom no-repeat; background-size: cover; height: 81px; }
+#strip                        { background:url(image_path('header-texture.jpg')) center bottom no-repeat; background-size: cover; height: 81px; position: relative;
+  video                       { width: 100%; height: auto; position: absolute; bottom: 0;}
+}
+
+
+#back-to-top                  { position: fixed; bottom: 100px; right: 10px; width: 117px; height: 48px;  overflow: hidden;  display:block;
+                                opacity: 0; transition: opacity 200ms ease-out; cursor: pointer; text-align: center;
+                                
+  &.active                    { opacity: .3; }
+  &:hover                     { opacity: .9; }
+
+  a                           { display: block;
+    &:hover                   { text-decoration:none; }
+  }
+  span                        { display: block; position:relative; color: #fff; text-decoration: none; font-weight: 100; font-size: 56px; top:9px; }
+  video                       { width: 300px; height: auto; margin-left: -50%; position: absolute; }
+}
 
 header                        { text-align:center; position:relative;
   #site-name                  { position:absolute; top:-65px; margin-left:-52px; width: 105px; height: 104px; left: 50%; 

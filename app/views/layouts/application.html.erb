@@ -12,8 +12,9 @@
 </head>
 <body>
     <div id='strip' style="background-image:url(<%= get_header_image %>)" >
-	    
+	   <%= video_tag ["/videos/hum-fur.mp4", "/videos/hum-fur.webm"], :autoplay => true, :loop => true %>
     </div>
+
 
     <header>
       <div id='header'>
@@ -28,7 +29,6 @@
             <a href='#submit' class='slideto'>Submit</a>
           </nav>
         </div>
-
       </div>
     </header>
     
