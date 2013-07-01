@@ -8,9 +8,9 @@ $min-1000: 'screen and (min-width: 1000px)';
 textarea:focus,
 input[type="text"]:focus      { outline: 0; outline: thin dotted \9; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 
-body                          { font-family: 'Lato', sans-serif; font-weight: 100; font-size:19px; line-height: 28px;}
+body                          { font-family: 'Lato', sans-serif; font-weight: 500; font-size:18px; line-height: 28px;}
 
-h1,h2,h3,h4,h5,h6             { font-family: 'BenchNine', sans-serif; font-weight: 100; text-transform: uppercase; }
+h1,h2,h3,h4,h5,h6             { font-family: 'BenchNine', sans-serif; font-weight: 500; text-transform: uppercase; }
 
 h2														{ font-size: 40px; }
 hr														{ border-color:#000; }
@@ -38,9 +38,9 @@ input[type='submit'].button   { background:#414040; color:#dfdfdf; text-transfor
                                 -webkit-transition: background 150ms ease; -moz-transition: background 150ms ease; transition: background 150ms ease; text-decoration: none;
                                 
   @media #{$min-600}          { font-size: 30px; }
-  &:hover                     { text-decoration:none; background: #000; color:#fff;}
+  &:hover                     { text-decoration:none; background-color: #000; color:#fff;}
                             
-  &.inactive                  { background:#9c9b9b; cursor:default; text-decoration: none; }
+  &.inactive                  { background-color:#9c9b9b; cursor:default; text-decoration: none; }
 }
 
 #strip                        { background:url(image_path('header-texture.jpg')) center bottom no-repeat; background-size: cover; height: 81px; position: relative;
@@ -124,7 +124,8 @@ header                        { text-align:center; position:relative;
 		@media #{$min-600}				{ margin-top: 0; }
 	  form                      { padding: 0 60px 0 0; margin: 0; position: relative;}
 	  input[type=email]         { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: auto;}
-	  input[type=submit]        { position: absolute; top: 0; right: 0; padding: 11px 14px; font-size:24px; }
+	  input[type=submit]        { position: absolute; top: 0; right: 0; padding: 0; background:#414040 url(image_path('arrow.png')) center center no-repeat; 
+	  														width: 49px; height: 49px; border-radius: 50%;}
 	  .mc-field-group           { padding:0; }
 	  
 	  #mce-success-response			{ font-size: 17px; font-weight: bold; }

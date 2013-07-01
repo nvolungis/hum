@@ -23,8 +23,6 @@
         $html = $('html'),
         $window = $(window);
     
-    console.log('inside fixbar');
-    
     var initialize = function(){
       registerHandlers();
       startEnquire();
