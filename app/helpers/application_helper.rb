@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def format_id(str)
-    str.downcase.gsub(" ", "_")
+    str.downcase.gsub(" ", "_").gsub('(','').gsub(')','')
   end
   
   
