@@ -139,7 +139,7 @@ header                        { text-align:center; position:relative;
   .details										{ margin: 140px 0 40px; min-height: 200px; position: relative; padding-top: 60px; 
   	 @media #{$min-600}				{ margin: 160px 0; padding-top: 40px; padding-bottom: 10px; }
   	.photo                    { border-radius: 50%; width: 140px;  position:absolute; top: -70px; margin-left: -70px; left: 50%;
-	  	@media #{$min-600}			{ width: 220px; top: -100px; margin-left: -110px; }
+	  	@media #{$min-600}			{ width: 220px; top: -110px; margin-left: -110px; }
   	}
 	  .container-fluid					{ clear:none; 
 		  &:after									{ clear:none; }
@@ -239,7 +239,10 @@ header                        { text-align:center; position:relative;
   .artist                     { margin-bottom:100px; 
   	&:last-child							{ margin-bottom: 0; }
     h3												{ margin-bottom: 0; line-height: 1em;}
-		span											{ color: #999; text-transform:uppercase; font-style: italic; font-size: 15px; font-family: 'Josefin Slab', serif; display:block; margin-bottom: 2.4em;}
+		span											{ color: #999; text-transform:uppercase; font-style: italic; font-size: 15px; 
+																font-family: 'Josefin Slab', serif; display:block; margin-bottom: 1.5em; 
+			@media #{$min-600}			{ margin-bottom: 2.4em; }
+		}
   }  
 }
 
