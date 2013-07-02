@@ -137,7 +137,7 @@ header                        { text-align:center; position:relative;
 
 #artists                      {   
   .details										{ margin: 140px 0 40px; min-height: 200px; position: relative; padding-top: 60px; 
-  	 @media #{$min-600}				{ margin: 160px 0; padding-top: 40px; padding-bottom: 10px; }
+  	 @media #{$min-600}				{ margin: 160px 0 30px; padding-top: 40px; padding-bottom: 10px; }
   	.photo                    { border-radius: 50%; width: 140px;  position:absolute; top: -70px; margin-left: -70px; left: 50%;
 	  	@media #{$min-600}			{ width: 220px; top: -110px; margin-left: -110px; }
   	}
@@ -171,7 +171,7 @@ header                        { text-align:center; position:relative;
     &:last-child              { margin-right: 0; }
   }
   
-  section.workitems						{ margin-top: 2em;
+  section.workitems						{ margin-top: 30px;
   	.container-fluid					{ padding: 0; margin:0 20px; 
 	  	@media #{$min-600}			{ padding: 0 20px; margin: 0 auto; }
   	} 
