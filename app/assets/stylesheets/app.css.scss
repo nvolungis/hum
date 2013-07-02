@@ -243,6 +243,8 @@ header                        { text-align:center; position:relative;
 																font-family: 'Josefin Slab', serif; display:block; margin-bottom: 1.5em; 
 			@media #{$min-600}			{ margin-bottom: 2.4em; }
 		}
+		
+		.workitem-info						{ margin-bottom: .3em; }
   }  
 }
 
