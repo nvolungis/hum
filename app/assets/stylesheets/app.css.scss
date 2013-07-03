@@ -136,7 +136,7 @@ header                        { text-align:center; position:relative;
 
 
 #artists                      {   
-  .details										{ margin: 140px 0 40px; min-height: 200px; position: relative; padding-top: 60px; 
+  .details										{ margin: 140px 0 40px; min-height: 200px; position: relative; padding-top: 80px; 
   	 @media #{$min-600}				{ margin: 160px 0 30px; padding-top: 40px; padding-bottom: 10px; }
   	.photo                    { border-radius: 50%; width: 140px;  position:absolute; top: -70px; margin-left: -70px; left: 50%;
 	  	@media #{$min-600}			{ width: 220px; top: -110px; margin-left: -110px; }
