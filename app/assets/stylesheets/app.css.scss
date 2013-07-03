@@ -88,8 +88,8 @@ header                        { text-align:center; position:relative;
   }
 }
 
-.region                       { padding:100px 0px 80px; 
-  @media #{$min-600}          {}
+.region                       { padding:40px 0px 80px; 
+  @media #{$min-600}          { padding:100px 0px 80px; }
   &:last-child                { border-bottom:none; margin-bottom:200px; }
 }
 
