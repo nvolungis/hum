@@ -1,4 +1,4 @@
-<li class='workitem-image image-<%= count %>' data-id="<%= format_id(workitem.title)%>">
+<li class='workitem-image image-<%= count %>' data-id="<%= format_id(workitem.title)%>" onClick="_gaq.push(['_trackEvent', 'Workitem Views', 'Expand Accordion View', '<%= workitem.title %>']);">
   <%= image_tag workitem.image.url(:accordion) %>
   <a href='<%= workitem.image.url() %>' target='_blank' onClick="_gaq.push(['_trackEvent', 'Workitem Views', 'Larger View', '<%= workitem.title %>']);" >Larger +</a>
 </li>
