@@ -250,8 +250,8 @@ header                        { text-align:center; position:relative;
 
 
 #donate                       { background: #e5e5e5;
-	.button                  		{ margin: 50px auto 30px; display: block; width: 223px; font-size: 30px;
-		@media #{$min-600}				{ font-size: 40px; width: 300px; }
+	.button                  		{ margin: 50px auto 30px; display: block; width: 223px; font-size: 24px;
+		@media #{$min-600}				{ font-size: 32px; width: 300px; }
 	}
 	
 	.stats 											{ text-align: center; text-transform: uppercase; font-style: italic; font-size: 16px;
