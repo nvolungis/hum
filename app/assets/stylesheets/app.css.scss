@@ -306,8 +306,23 @@ header                        { text-align:center; position:relative;
       }
     }
      
-    .submission-label         {  display: inline-block; position:relative; font-family: 'Arvo', serif; font-size:19px; color:#585858; text-transform: uppercase; margin-bottom:10px;
-       @media #{$min-600}     { transform-origin: left bottom; transform: rotate(-90deg); left: -10px; top:265px; position:absolute; margin-bottom:0; }
+    .submission-label         { display: inline-block; 
+                                position:relative; 
+                                font-family: 'Arvo', serif; 
+                                font-size:19px; color:#585858; 
+                                text-transform: uppercase; 
+                                margin-bottom:10px;
+                                
+       @media #{$min-600}     { left: -10px; 
+                                top:265px; 
+                                position:absolute; 
+                                margin-bottom:0; 
+                                -webkit-transform-origin: left bottom;  
+                                   -moz-transform-origin: left bottom;
+                                        transform-origin: left bottom;
+                                -webkit-transform: rotate(-90deg);
+                                   -moz-transform: rotate(-90deg);
+                                        transform: rotate(-90deg); }
     }
   }
   
